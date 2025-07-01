@@ -7,6 +7,8 @@ import Skills from './components/Skills.jsx'
 import Contact from './components/Contact.jsx'
 import Nav from './components/Nav.jsx'
 import Cursor from './components/Cursor.jsx'
+import Animation from './components/animation.jsx'
+
 function App() {
 
   return (
@@ -15,6 +17,7 @@ function App() {
     <div className="bg-white dark:bg-[#0e100f] text-black dark:text-[#fffce1] transition-colors duration-250">
       <Nav/>
       <Hello />
+      {/* <Animation/> */}
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-11/12 xl:w-8/12 flex flex-col justify-center items-center">
           <About />

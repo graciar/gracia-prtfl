@@ -13,7 +13,7 @@ function About() {
       viewport={{ once: false, amount: 0.5 }} 
     >
     <div id="home"className='min-h-screen flex items-center'>
-        <div className='py-10 flex flex-col items-center'>
+        <div className='flex flex-col items-center'>
             <div className="flex flex-col xl:flex-row justify-center items-start">
                 <div className="p-10 pb-5  flex flex-col tracking-widest">
                     <div className='flex justify-center text-3xl xl:text-7xl py-12 tracking-widest'>

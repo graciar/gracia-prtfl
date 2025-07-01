@@ -61,10 +61,11 @@ export default function Hello() {
                     <p> {greetings[currentIndex]}</p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center w-9/12 text-2xl py-7 font-normal tracking-widest mb-6">
-                    <p >Welcome to my digital space!</p>
-                    {/* <p>Thanks for visiting — take a look around</p> */}
+                <div className="flex items-center justify-center w-9/12 text-2xl max-sm:text-lg py-7 font-normal tracking-widest mb-6">
+                    <p className="mr-4">Welcome to my digital space!</p>
+                    <div className=""><ModeToggler /></div>
                 </div>
+
             </div>
             <div className="absolute bottom-7 animate-bounce">
                 {/* Scroll down to see more 👇 */}

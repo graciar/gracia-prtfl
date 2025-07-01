@@ -3,9 +3,7 @@ import { gsap } from "gsap";
 import { useDarkMode } from "../context/ThemeContext";
 
 const ModeToggler = () => {
-  // const {darkMode, setDarkMode} = useDarkMode()
-
- const { darkMode, setDarkMode } = useDarkMode();
+  const { darkMode, setDarkMode } = useDarkMode();
   const sunRef = useRef(null);
   const moonRef = useRef(null);
 
@@ -42,15 +40,15 @@ const ModeToggler = () => {
   };
 
   return (
-    <div className="relative m-2 w-20 h-20 overflow-hidden">
+    <div className="relative w-10 h-10 overflow-hidden">
       <div
-        className="flex items-center justify-center w-full h-full text-5xl font-bold cursor-pointer"
+        className="flex items-center justify-center w-full h-full text-2xl font-bold cursor-pointer"
         onClick={handleClick}
       >
         <span ref={sunRef} className="absolute opacity-0">
           🔆
         </span>
-        <span ref={moonRef} className="absolute opacity-0">
+        <span ref={moonRef} className="absolute opacity-0 ">
           🌙
         </span>
       </div>

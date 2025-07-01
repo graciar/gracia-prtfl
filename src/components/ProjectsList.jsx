@@ -8,5 +8,12 @@ export const ProjectList = [
     tools: ["HTML", "CSS", "JS"],
     bgImage: "url('./web.png')"
   },
+  {
+    color: "bg-yellow-400",
+    text: "Event Manager",
+    desc: "A full-stack web application for managing events, tickets, and user participation. Built with Laravel and Bootstrap.",
+    tools: ["Laravel", "Bootstrap", "MySql"],
+    bgImage: "url('./eventapp.png')"
+  },
   
 ];
