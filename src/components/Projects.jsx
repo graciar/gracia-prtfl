@@ -28,7 +28,7 @@ export default function Projects() {
       gsap.set(el, { xPercent:  (ProjectList.length - i - 1 ) * 1}); // offscreen right
 
       tl.to(el, {
-        xPercent: 98 - (i * 2) ,
+        xPercent: 98 - (i * 1) ,
         duration: 3,
         stagger: 5,
         ease: "none",
@@ -46,8 +46,8 @@ export default function Projects() {
     <div ref={containerRef} className="relative w-full h-screen flex justify-center overflow-hidden" id='projects'>
     {/* <div className="w-8/12 h-full relative overflow-hidden"> */}
       <div className="h-screen font-[barriecito] flex flex-col justify-center items-start px-20">
-        <p className="text-6xl xl:text-9xl">PORTFOLIO.</p><br />
-        <p className="text-2xl xl:text-3xl">Here are some of the projects I've built to sharpen my skills.</p>
+        {/* <p className="text-6xl xl:text-9xl">PORTFOLIO.</p><br /> */}
+        <p className="text-2xl xl:text-3xl">Here are some of the projects that I've built.</p>
       </div>
       <div className="z-11 absolute border bottom-0 right-0 m-7 text-2xl py-2 px-3 text-white">
         <p>Projects</p>

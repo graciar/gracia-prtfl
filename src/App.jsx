@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     <Cursor/>
-    <div className="bg-white dark:bg-[#0e100f] text-black dark:text-[#fffce1] transition-colors duration-250">
+    <div className="bg-white dark:bg-[#0e100f] text-black dark:text-white transition-colors duration-250">
       <Nav/>
       <Hello />
       {/* <Animation/> */}

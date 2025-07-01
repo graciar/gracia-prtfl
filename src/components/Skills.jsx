@@ -30,37 +30,39 @@ function Skills() {
     // });
 
     // Animate each card scale
-    cardRefs.current.forEach((el) => {
-      if (!el) return;
-      gsap.fromTo(
-        el,
-        { scale: 1 },
-        {
-          scale: 1.05,
-          scrollTrigger: {
-            trigger: el,
-            start: "top center",
-            end: "bottom 45%",
-            toggleActions: "play reverse play reverse",
-            // markers:true,
-          },
-          duration: 0.1,
-          // delay: 0.9,
-          ease: "power2.out",
-        }
-      );
-    });
+    // cardRefs.current.forEach((el) => {
+    //   if (!el) return;
+    //   gsap.fromTo(
+    //     el,
+    //     { scale: 1 },
+    //     {
+    //       scale: 1.05,
+    //       scrollTrigger: {
+    //         trigger: el,
+    //         start: "top center",
+    //         end: "bottom 45%",
+    //         toggleActions: "play reverse play reverse",
+    //         // markers:true,
+    //       },
+    //       duration: 0.1,
+    //       // delay: 0.9,
+    //       ease: "power2.out",
+    //     }
+    //   );
+    // });
 
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+    // return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
   return (
-    <div className="flex w-full min-h-screen justify-center items-center" id="skills">
+    <div className="flex w-full h-full py-15 justify-center items-center" id="skills">
       <div className="flex flex-col w-full h-full items-center tracking-wider">
         <p className="text-2xl lg:text-4xl font-semibold mb-8 text-center">
+          Skills
+        </p>
+        <p className="text-md lg:text-lg mb-8 text-center">
           Here's the tech stack I use to build my web projects...
         </p>
-
         <div className="w-full max-w-3xl">
           {skills.map((skill, i) => (
             <div key={i} className="w-full">

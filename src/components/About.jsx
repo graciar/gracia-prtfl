@@ -10,9 +10,9 @@ function About() {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 70 }}
       transition={{ duration: 0.7 }}
-      viewport={{ once: false, amount: 0.5 }} 
+      viewport={{ once: false, amount: 0.35 }} 
     >
-    <div id="home"className='min-h-screen flex items-center'>
+    <div id="home"className='h-full py-15 flex items-center'>
         <div className='flex flex-col items-center'>
             <div className="flex flex-col xl:flex-row justify-center items-start">
                 <div className="p-10 pb-5  flex flex-col tracking-widest">
@@ -24,9 +24,10 @@ function About() {
 
                 <div className="py-8 text-lg tracking-widest leading-relaxed rounded-xl text-justify">
                     <p className=''>
-                        I'm a student currently pursuing a degree in Informatics at President University, I’m actively learning and building projects focusing on the back-end.
-                        My journey into development started through university projects, where I started using tools like HTML, CSS, JavaScript, and frameworks such as React and Tailwind CSS. 
-                        Currently, I focus on backend development and learn by working on hands-on projects.
+                        I'm a student currently pursuing a degree in Informatics at President University. 
+                        I’ve been actively learning and building projects in web development—working on both the front-end and back-end. 
+                        My journey started with university assignments, where I got introduced to HTML, CSS, JavaScript, and frameworks like React and Tailwind CSS. 
+                        Over time, I explored backend development as well, using tools like Laravel and Flask to build full-stack applications.
                         For my concentration, I chose Cybersecurity, and I spent a whole semester focusing on it. So, I got to learn a lot about keeping stuff secure.
                     </p><br />
                     <p>

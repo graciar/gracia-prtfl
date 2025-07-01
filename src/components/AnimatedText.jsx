@@ -85,7 +85,7 @@ export default function AnimatedText() {
       });
   }, []);
 
-  const text = "see content below...";
+  const text = "scroll down";
 
   return (
     <div>
