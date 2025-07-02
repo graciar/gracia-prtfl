@@ -8,7 +8,7 @@ function Skills() {
   const skills = [
     { title: "Backend", tools: ["Laravel", "Flask", "SQL"] },
     { title: "Frontend", tools: ["React", "Tailwind"] },
-    { title: "Tools", tools: ["Git", "Github"] }
+    { title: "Tools", tools: ["Git",] }
   ];
 
   const toolRefs = useRef([]);
@@ -61,14 +61,14 @@ function Skills() {
           Skills
         </p>
         <p className="text-md lg:text-lg mb-8 text-center">
-          Here's the tech stack I use to build my web projects...
+          Here's the tech stack I use to build my projects...
         </p>
         <div className="w-full max-w-3xl">
           {skills.map((skill, i) => (
             <div key={i} className="w-full">
               <div
                 ref={(el) => (cardRefs.current[i] = el)}
-                className="m-5 px-5 py-3 transition-transform rounded-2xl overflow-hidden shadow-lg dark:border"
+                className="m-5 px-5 py-3 transition-transform rounded-2xl overflow-hidden shadow-lg dark:border hover:scale-[1.05]"
               >
                 <div className="h-7 p-5 flex items-center text-xl xl:text-2xl font-semibold">
                   {skill.title}
