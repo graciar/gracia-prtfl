@@ -10,7 +10,7 @@ function About() {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 70 }}
       transition={{ duration: 0.7 }}
-      viewport={{ once: false, amount: 0.35 }} 
+      viewport={{ once: false, amount: 0.20 }} 
     >
     <div id="home"className='h-full py-15 flex items-center'>
         <div className='flex flex-col items-center'>

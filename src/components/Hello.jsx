@@ -64,7 +64,7 @@ export default function Hello() {
                 <div className="flex justify-center w-9/12 text-3xl max-sm:text-lg pt-7 font-normal tracking-widest mb-3">
                     <p className="">I’m <strong>Gracia</strong>, and welcome to my portfolio.</p>
                 </div>
-                <div className="text-gray-700"><p>I'm a student developer passionate about building web experiences.</p></div>
+                <div className="text-gray-700"><p>I’m a student learning web development and working on projects to grow my skills.</p></div>
                 <div className="m-3"><ModeToggler /></div>
             </div>
             <div className="absolute bottom-7 animate-bounce">
