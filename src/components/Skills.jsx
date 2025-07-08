@@ -6,10 +6,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Skills() {
   const skills = [
-    { title: "Backend", tools: ["Laravel", "Flask", "SQL"] },
-    { title: "Frontend", tools: ["React", "Tailwind"] },
-    { title: "Tools", tools: ["Git",] }
-  ];
+  {
+    title: "Backend",
+    tools: [
+      { name: "Laravel", logo: "./laravel.png" },
+      { name: "Flask", logo: "./flask.png" },
+      { name: "SQL", logo: "./mysql.png" },
+    ],
+  },
+  {
+    title: "Frontend",
+    tools: [
+      { name: "React", logo: "./react.png" },
+      { name: "Tailwind", logo: "./tailwind.png" },
+    ],
+  },
+  {
+    title: "Tools",
+    tools: [
+      { name: "Git", logo: "./git.png" },
+    ],
+  },
+];
+
 
   const toolRefs = useRef([]);
   const cardRefs = useRef([]); // Add this
@@ -55,7 +74,7 @@ function Skills() {
   }, []);
 
   return (
-    <div className="flex w-full h-full py-15 justify-center items-center" id="skills">
+    <div className="flex w-full h-full py-24 max-md:py-1 justify-center items-center" id="skills">
       <div className="flex flex-col w-full h-full items-center tracking-wider">
         <p className="text-2xl lg:text-4xl font-semibold mb-8 text-center">
           Skills
@@ -76,14 +95,15 @@ function Skills() {
                 <div className="p-3 text-lg xl:text-xl">
                   <ul className="flex flex-wrap gap-2">
                     {skill.tools.map((tool, j) => (
-                      <li
-                        key={j}
-                        // ref={(el) => (toolRefs.current[i * 10 + j] = el)}
-                        className="px-2 py-1 hover:bg-amber-300 hover:scale-[1.1] dark:text-black bg-gray-200 rounded transition-all duration-300"
-                      >
-                        {tool}
-                      </li>
-                    ))}
+                    <li
+                      key={j}
+                      className="flex items-center gap-2 px-2 py-1 hover:bg-amber-300 hover:scale-[1.1] dark:text-black bg-gray-200 rounded transition-all duration-300"
+                    >
+                      <img src={tool.logo} alt={tool.name} className="w-5 h-5 object-contain" />
+                      {tool.name}
+                    </li>
+                  ))}
+
                   </ul>
                 </div>
               </div>

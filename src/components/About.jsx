@@ -5,18 +5,18 @@ function About() {
     
   return (
     <>
-    <motion.div
+    {/* <motion.div
       className="opacity-0 max-md:hidden"
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 70 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: false, amount: 0.20 }} 
-    >
-    <div id="home"className='h-full py-15 flex items-center'>
+    > */}
+    <div id="about"className='h-full py-15 flex items-center max-md:py-1'>
         <div className='flex flex-col items-center'>
             <div className="flex flex-col xl:flex-row justify-center items-start">
-                <div className="p-10 pb-5  flex flex-col tracking-widest">
-                    <div className='flex justify-center text-3xl xl:text-7xl py-12 tracking-widest'>
+                <div className="p-10 pb-5 flex flex-col tracking-widest">
+                    <div className='flex justify-center text-3xl xl:text-7xl py-12 max-md:py-1 tracking-widest'>
                         <p><strong>About Me</strong></p>
                     </div>
                    {/* <img src="" alt="" /> */}
@@ -32,14 +32,15 @@ function About() {
                     </p><br />
                     <p>
                         While I don’t have official industry experience yet, I’ve worked on academic and self-initiated projects that have strengthened my skills and deepen my understanding of web development. 
-                        I’m currently seeking internship opportunities where I can grow as a developer, collaborate with others, and contribute to real-world projects. You can find my resume <a href="#" className='underline hover:text-red-400'>here</a> for more details.
+                        I’m currently seeking internship opportunities where I can grow as a developer, collaborate with others, and contribute to real-world projects. 
+                        {/* <span> You can find my resume <a href="#" className='underline hover:text-red-400'>here</a> for more details.</span> */}
                     </p><br />
                 </div>
             </div>
         </div>
     </div>
-    </motion.div>
-    <div id="home"className='min-h-screen flex items-center md:hidden'>
+    {/* </motion.div> */}
+    <div className='min-h-screen items-center hidden'>
         <div className=' py-10 flex flex-col items-center'>
             <div className="flex flex-col xl:flex-row justify-center items-start">
                 <div className="pb-5 flex flex-col tracking-widest">

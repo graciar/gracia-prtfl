@@ -71,12 +71,12 @@ export default function Projects() {
           <div>
             {project.text}
           </div>
-          <div className="text-lg font-normal mt-7">
+          <div className="text-lg max-md:text-sm font-normal mt-7">
             {project.desc}
           </div>
           <ul className="flex flex-wrap gap-2 mt-3">
             {project.tools.map((tool, i) => (
-              <li key={i} className="px-2 py-1 rounded tracking-widest text-xl">
+              <li key={i} className="px-2 py-1 rounded tracking-widest text-xl max-md:text-base">
                 {tool}
               </li>
             ))}

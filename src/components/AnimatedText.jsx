@@ -89,7 +89,7 @@ export default function AnimatedText() {
 
   return (
     <div>
-        <div className="end z-0 text-md dark:text-black" ref={textRef}>
+        <div className="end z-0 text-md md:text-lg dark:text-black" ref={textRef}>
           {text.split("").map((char, i) => (
             <span key={i} style={{ display: "inline-block" }}>
             {char === " " ? "\u00A0" : char}

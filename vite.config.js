@@ -9,4 +9,9 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/gracia-prtfl/',
+  server:{
+    host: true,
+    strictPost: true,
+    port: 8080,
+  }
 })

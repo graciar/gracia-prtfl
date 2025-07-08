@@ -3,7 +3,7 @@ import gsap from "gsap";
 import AnimatedText from "./AnimatedText.jsx";
 import ModeToggler from "./ModeToggler.jsx";
 
-export default function Hello() {    
+export default function Home() {    
     const greetings = [
     "Hi 👋",
     "Halo 👋",
@@ -49,7 +49,7 @@ export default function Hello() {
     }, []);
 
     return (
-        <div className="relative flex w-full h-full flex-col px:5 lg:px-30 justify-center items-center min-h-screen">
+        <div className="relative flex w-full h-full flex-col px:5 lg:px-30 justify-center items-center min-h-screen" id="home">
             
             <div className="flex w-9/12 flex-col justify-center items-center">
                 <div className="relative w-full h-40 flex justify-center items-center overflow-hidden">
@@ -61,10 +61,19 @@ export default function Hello() {
                     <h1 ref={greetingsRef}>{currentGreeting}</h1>
                     </div>
                 </div>
-                <div className="flex justify-center w-9/12 text-3xl max-sm:text-lg pt-7 font-normal tracking-widest mb-3">
-                    <p className="">I’m <strong>Gracia</strong>, and welcome to my portfolio.</p>
+                <div className="w-full flex justify-center pt-16 px-4">
+                <div className="max-w-3xl text-center font-normal tracking-wide">
+                  <p className="text-3xl md:text-4xl font-bold mb-1">
+                    I’m <span className="hover:text-amber-500">Gracia</span>
+                  </p>
+                  <p className="hidden md:block text-lg md:text-4xl font-bold leading-tight mb-6">welcome to my portfolio.</p>
+                  <p className="text-sm lg:text-xl text-gray-700 dark:text-gray-300">
+                  I enjoy working on web development projects and learning more about cybersecurity along the way.
+                  </p>
                 </div>
-                <div className="text-gray-700"><p>I’m a student learning web development and working on projects to grow my skills.</p></div>
+                </div>
+
+                <div className="text-gray-700"></div>
                 <div className="m-3"><ModeToggler /></div>
             </div>
             <div className="absolute bottom-7 animate-bounce">
