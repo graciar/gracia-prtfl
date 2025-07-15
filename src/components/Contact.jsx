@@ -14,7 +14,7 @@ function Contact() {
                     <p>Socials</p>
                     <ul className='flex flex-row py-2 items-center'>
                         <li><a href="https://github.com/graciar"><img src="./github.png" alt="github" className="lg:w-10 w-7 p-1 mx-1 dark:bg-white" /></a></li>
-                        <li><a href="https://www.linkedin.com/in/gracia-filia-04a26428b/"><img src="./linkedin.png" alt="linkedin" className="lg:w-10 w-7 p-1 mx-1 dark:bg-white" /></a></li>
+                        <li><a href="https://www.linkedin.com/in/gracia-rumondor-04a26428b/"><img src="./linkedin.png" alt="linkedin" className="lg:w-10 w-7 p-1 mx-1 dark:bg-white" /></a></li>
                     </ul>
                 </div>
                 <div className='text-start rounded-3xl px-7 py-1'>
