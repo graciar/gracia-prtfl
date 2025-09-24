@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-    <Cursor/>
+    {/* <Cursor/> */}
     <div className="bg-white dark:bg-[#0e100f] text-black dark:text-white transition-colors duration-250">
       <Nav/>
       <Home />
@@ -21,9 +21,7 @@ function App() {
         <div className="w-11/12 xl:w-8/12 flex flex-col justify-center items-center">
           <About />
           <Skills/>
-          <div className="w-full">
-            <Projects />
-          </div>
+          <Projects/>
           <Contact/> 
         </div>
       </div>

@@ -19,7 +19,7 @@ function Contact() {
                 </div>
                 <div className='text-start rounded-3xl px-7 py-1'>
                     <p>Email</p>
-                    <p className='py-2'><strong>graciafilia22@gmail.com</strong></p>
+                    <p className='py-2'><strong>gracia.rumondor25@gmail.com</strong></p>
                 </div>
             </div>
         </div>
