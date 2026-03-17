@@ -43,7 +43,6 @@ const projectsList = [
     title: "event manager - Ticket System",
     stack: "Laravel, MySQL, Bootstrap",
     overview: "A management system built to handle an event. I developed a platform where admins can create and organize events, while users can browse the schedule and purchase tickets directly through the app.",
-    image: "/projects/event-manager.png", 
     features: [
       "Simple Role-Based Access: Separate permissions for Admins (manage events) and Users (view/buy tickets).",
       "Admin CRUD: Developed a dashboard to Create, Read, Update, and Delete event listings and ticket details.",
