@@ -61,7 +61,7 @@ function Nav() {
     <div className="fixed max-md:hidden top-0 left-0 w-full z-50 flex justify-between px-6 py-3 bg-[rgba(243,244,246,0.5)] dark:bg-[rgba(24,27,26,0.7)] backdrop-blur">
       
       <div className="text-2xl font-bold text-black dark:text-white">
-        portfolio
+        gracia rmndr
       </div>
 
       {/* Menu */}
