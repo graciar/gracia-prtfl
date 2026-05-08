@@ -25,7 +25,7 @@ function Skills() {
     tools: [
       { name: "PostgreSQL", logo: "./postgres.png" },
       { name: "MySQL", logo: "./mysql.png" },
-      { name: "MongoDB", logo: "./mongo.png" }, 
+      // { name: "MongoDB", logo: "./mongo.png" }, 
       { name: "Supabase", logo: "./supabase.png" },
     ],
   },
