@@ -1,84 +1,37 @@
-import { useRef, useState, useEffect, useContext } from "react";
-import gsap from "gsap";
-import AnimatedText from "./AnimatedText.jsx";
-import ModeToggler from "./ModeToggler.jsx";
+import { motion } from "framer-motion";
 
-export default function Home() {    
-    const greetings = [
-    "Hi 👋",
-    "Halo 👋",
-    "Hola 👋",
-    "Ciao 👋",
-    "Olá 👋",
-    "Hoi 👋",
-    ];
-
-    const greetingsRef = useRef(null);
-    const currentIndexRef = useRef(0); // mutable reference for index
-    const [currentGreeting, setCurrentGreeting] = useState(greetings[0]);
-
-    useEffect(() => {
-    const tl = gsap.timeline({
-        repeat: -1,
-        onRepeat: () => {
-        // update index without causing re-render
-        currentIndexRef.current =
-            (currentIndexRef.current + 1) % greetings.length;
-        setCurrentGreeting(greetings[currentIndexRef.current]);
-        },
-    });
-
-    tl.fromTo(
-        greetingsRef.current,
-        { y: 150, opacity: 0 },
-        {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        }
-    ).to(greetingsRef.current, {
-        y: -150,
-        opacity: 0,
-        duration: 1,
-        delay: 1.5,
-        ease: "power2.in",
-    });
-
-    return () => tl.kill(); // clean up on unmount
-    }, []);
-
+export default function Home() {
     return (
-        <div className="relative flex w-full h-screen flex-col px:5 lg:px-30 justify-center items-center" id="home">
-            
-            <div className="flex w-9/12 flex-col justify-center items-center">
-                <div className="relative w-full h-40 flex justify-center items-center overflow-hidden">
-                    <div
-                    ref={greetingsRef}
-                    style={{ willChange: "transform, opacity"}}
-                    className="absolute max-sm:text-7xl text-8xl z-20 lg:text-9xl font-black font-[barriecito] flex justify-start items-start transition-colors duration-300 ease-in-out"
-                    >
-                    <h1 ref={greetingsRef}>{currentGreeting}</h1>
-                    </div>
-                </div>
-                <div className="w-full flex justify-center pt-16 px-4">
-                <div className="max-w-3xl text-center font-normal uppercase">
-                  {/* <p className="text-3xl md:text-4xl font-bold mb-1">
-                    I’m <span className="hover:text-amber-500">Gracia</span>
-                  </p> */}
-                  <p className="hidden md:block text-lg md:text-4xl font-bold leading-tight mb-6">welcome to my portfolio.</p>
-                  <p className="text-sm lg:text-xl text-gray-700 dark:text-gray-300">
-                  I enjoy working on web development projects and learning more about cybersecurity along the way.
-                  </p>
-                </div>
-                </div>
+        <div className="relative flex w-full min-h-screen flex-col px-6 lg:px-24 justify-center items-center" id="home">
+            <div className="flex w-full max-w-5xl flex-col justify-center items-center text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                    <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-medium tracking-tighter leading-[0.9] mb-8 text-[#111] dark:text-[#f3f3f3]">
+                        Gracia <br className="hidden md:block" /> Rumondor.
+                    </h1>
+                </motion.div>
 
-                {/* <div className="m-3"><ModeToggler /></div> */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="max-w-2xl flex flex-col items-center"
+                >
+                    <div className="flex items-center gap-4 mb-8">
+                        <span className="w-8 h-[1px] bg-gray-300 dark:bg-gray-700"></span>
+                        <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-400 font-bold">
+                            Software Developer & Cybersecurity
+                        </p>
+                        <span className="w-8 h-[1px] bg-gray-300 dark:bg-gray-700"></span>
+                    </div>
+                    <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed font-light max-w-md">
+                        I enjoy building web development projects with an interest in exploring cybersecurity
+                    </p>
+                </motion.div>
             </div>
-            {/* <div className="absolute bottom-7 animate-bounce">
-                <AnimatedText/>
-            </div> */}
-            
         </div>
     );
 }

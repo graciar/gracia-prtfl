@@ -2,39 +2,41 @@ import React from 'react'
 
 function About() {
   return (
-    <section id="about" className="w-full min-h-screen flex items-center py-20 px-6">
+    <section id="about" className="w-full min-h-screen flex items-center py-32 px-6">
       <div className="max-w-6xl mx-auto w-full">
-        
-        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-10 xl:gap-20">
-          
-          <div className="w-full xl:w-1/3 flex flex-col items-center xl:items-start text-center xl:text-left">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-black leading-none">
-              About <br className="hidden xl:block" /> Me.
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+
+          {/* Header Column */}
+          <div className="w-full lg:w-5/12 flex flex-col">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-6 h-[1px] bg-gray-300 dark:bg-gray-700"></span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+                01. Background
+              </span>
+            </div>
+            <h2 className="text-6xl md:text-7xl lg:text-[6rem] font-medium tracking-tighter leading-[0.9] text-[#111] dark:text-[#f3f3f3]">
+              About <br className="hidden lg:block" /> Me.
             </h2>
           </div>
 
-          <div className="w-full xl:w-2/3 space-y-6 text-base md:text-lg leading-relaxed text-gray-700 font-medium text-justify md:text-left">
+          {/* Text Column */}
+          <div className="w-full lg:w-7/12 space-y-8 text-base md:text-lg lg:text-xl leading-[1.8] text-gray-500 dark:text-gray-400 font-light">
             <p>
-              I'm a student currently pursuing a degree in Informatics at President University. 
-              I’ve been actively learning and building projects in web development—working on both the front-end and back-end. 
-              My journey started with university assignments, where I got introduced to HTML, CSS, JavaScript, and frameworks like React and Tailwind CSS. 
-            </p>
-            
-            <p>
-              Over time, I explored backend development as well, using tools like Laravel and Flask to build full-stack applications.
-              For my concentration, I chose Cybersecurity, spending a full semester diving deep into digital defense and data protection.
+              I'm a student currently pursuing a degree in Informatics at President University.
+              I’ve been actively learning and building projects in web development—working on both the front-end and back-end.
+              My journey started with university assignments, where I got introduced to HTML, CSS, JavaScript, and frameworks like React and Tailwind CSS.
             </p>
 
             <p>
-              While I don’t have official industry experience yet, my academic and self-initiated projects have strengthened my technical foundation. 
-              I’m currently seeking <span className="text-black font-bold underline decoration-gray-300 underline-offset-4">internship opportunities</span> where I can collaborate on real-world projects and grow as a developer.
+              Over time, I explored backend development as well, using tools like Laravel and Flask to build full-stack applications.
+              For my concentration, I chose <span className="text-[#111] dark:text-[#f3f3f3] font-medium">Cybersecurity</span>,
+              where I focused on building a foundation in core security principles.
             </p>
-            
-            {/* <div className="pt-4">
-              <a href="https://docs.google.com/document/d/1THtbBQmL_54L5SMYS3ctjhsREmV7V-R3/edit?usp=sharing&ouid=100316868527235210012&rtpof=true&sd=true" className="text-sm font-black uppercase tracking-widest text-black hover:text-gray-500 transition-colors border-b-2 border-black pb-1">
-                View Resume
-              </a>
-            </div> */}
+
+            <p>
+              While I don’t have official industry experience yet, my academic and self-initiated projects have strengthened my technical foundation.
+              I’m currently seeking <span className="text-[#111] dark:text-[#f3f3f3] font-medium border-b border-gray-300 dark:border-gray-700 pb-0.5">internship opportunities</span> where I can collaborate on real-world projects and grow as a developer.
+            </p>
           </div>
 
         </div>

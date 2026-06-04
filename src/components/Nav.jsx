@@ -1,95 +1,74 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import ModeToggler from "./ModeToggler";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useEffect, useState } from "react";
 
 function Nav() {
-  const menuRef = useRef(null);
-  const underlineRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(null); // start as null
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const menuItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
+    // { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
 
-  const moveUnderline = (el) => {
-    if (!el || !underlineRef.current || !menuRef.current) return;
-
-    const menuBox = menuRef.current.getBoundingClientRect();
-    const elBox = el.getBoundingClientRect();
-    const x = elBox.left - menuBox.left;
-
-    gsap.to(underlineRef.current, {
-      x,
-      width: el.offsetWidth,
-      autoAlpha: 1, // fade in
-      duration: 1.2,
-      ease: "elastic.out(1, 0.5)",
-    });
-  };
-
   useEffect(() => {
-    menuItems.forEach((item, index) => {
-      ScrollTrigger.create({
-        trigger: item.href,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => setActiveIndex(index),
-        onEnterBack: () => setActiveIndex(index),
-      });
-    });
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      // Find the currently active section
+      menuItems.forEach((item, index) => {
+        const section = document.querySelector(item.href);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          // Add a small buffer to make the transition feel more natural
+          if (
+            scrollPosition >= sectionTop - windowHeight / 3 &&
+            scrollPosition < sectionTop + sectionHeight - windowHeight / 3
+          ) {
+            setActiveIndex(index);
+          }
+        }
+      });
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (activeIndex !== null) {
-      const activeLink = menuRef.current?.querySelectorAll("a")[activeIndex];
-      if (activeLink) moveUnderline(activeLink);
-    }
-  }, [activeIndex]);
-
   return (
-    <div className="fixed max-md:hidden top-0 left-0 w-full z-50 flex justify-between px-6 py-3 bg-[rgba(243,244,246,0.5)] dark:bg-[rgba(24,27,26,0.7)] backdrop-blur">
-      
-      <div className="text-2xl font-bold text-black dark:text-white">
-        gracia rmndr
-      </div>
-
-      {/* Menu */}
-      <ul ref={menuRef} className="relative flex space-x-4 items-center px-5 py-2">
-        {menuItems.map((item, index) => (
-          <li key={index} className="relative">
+    <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 pointer-events-none">
+      <nav className="pointer-events-auto bg-white/40 dark:bg-[#0a0a0a]/40 backdrop-blur-xl px-2 py-2 rounded-full border border-black/5 dark:border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.05)] flex items-center gap-1 sm:gap-2 transition-all">
+        {menuItems.map((item, index) => {
+          const isActive = activeIndex === index;
+          return (
             <a
+              key={item.label}
               href={item.href}
               onClick={(e) => {
                 e.preventDefault();
-                setActiveIndex(index); // update active index
+                setActiveIndex(index);
                 const target = document.querySelector(item.href);
-                if (target) target.scrollIntoView({ behavior: "smooth" });
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
               }}
-              className="inline-block px-2 py-1 font-medium text-black dark:text-white"
+              className={`relative px-4 py-1.5 rounded-full text-[13px] uppercase tracking-widest font-medium transition-colors duration-500 ${isActive
+                  ? "text-black dark:text-white"
+                  : "text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white"
+                }`}
             >
               {item.label}
+              {isActive && (
+                <span className="absolute left-1/2 bottom-0 w-1 h-1 bg-black dark:bg-white rounded-full -translate-x-1/2 shadow-sm transition-all duration-500" />
+              )}
             </a>
-          </li>
-        ))}
-
-        {/* Underline */}
-        <li
-          ref={underlineRef}
-          className="absolute h-[3px] bg-black dark:bg-[#fffde0] bottom-0 left-0 rounded opacity-0"
-          style={{ width: "0px" }}
-        />
-      </ul>
+          );
+        })}
+      </nav>
     </div>
   );
 }

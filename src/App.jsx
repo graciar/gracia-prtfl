@@ -3,9 +3,9 @@ import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
 import Nav from './components/Nav.jsx'
-import ProjectDetails from './pages/ProjectDetails.jsx'
 import Contact from './components/Contact.jsx'
 import Skills from './components/Skills.jsx'
+// import Experience from './components/Experience.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import SmoothScrolling from './components/SmoothScrolling.jsx'
 
@@ -15,19 +15,19 @@ const MainContent = () => {
     { id: "home", component: <Home /> },
     { id: "about", component: <About /> },
     { id: "skills", component: <Skills /> },
+    // { id: "experience", component: <Experience /> },
     { id: "projects", component: <Projects /> },
     { id: "contact", component: <Contact /> },
   ];
 
   return (
     <div className="w-full">
-      <Nav />
       {/* <Home /> */}
       <main className="w-full">
         {sections.map((section, i) => (
-          <div 
-            key={section.id} 
-            className={i % 2 !== 0 ? "bg-[#F3F4F4]" : "bg-white"}
+          <div
+            key={section.id}
+            className="w-full"
           >
             {section.component}
           </div>
@@ -40,20 +40,18 @@ const MainContent = () => {
 function App() {
   return (
     <BrowserRouter>
-    {/* <SmoothScrolling> */}
-    <ScrollToTop/>
-      <div className="bg-white dark:bg-[#0e100f] text-black dark:text-white transition-colors duration-250 min-h-screen">
-        
-        
+      <Nav />
+      {/* <SmoothScrolling> */}
+      <ScrollToTop />
+      <div className="bg-[#fafafa] dark:bg-[#0a0a0a] text-[#111] dark:text-[#f3f3f3] transition-colors duration-500 min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+
+
         <Routes>
           {/* Main Landing Page */}
           <Route path="/gracia-prtfl" element={<MainContent />} />
-
-          {/* Project Details Page - :slug is the dynamic variable */}
-          <Route path="/gracia-prtfl/project/:id" element={<ProjectDetails />} />
         </Routes>
       </div>
-    {/* </SmoothScrolling> */}
+      {/* </SmoothScrolling> */}
     </BrowserRouter>
   )
 }

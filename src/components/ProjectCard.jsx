@@ -7,24 +7,18 @@ const ProjectCard = ({ title, overview, year, image, vid, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="group cursor-pointer w-full bg-white rounded-2xl overflow-hidden
-                 border border-stone-100
-                 shadow-[0_2px_12px_rgba(0,0,0,0.04)]
-                 hover:shadow-[0_16px_40px_rgba(0,0,0,0.09)]
-                 hover:-translate-y-1
-                 transition-all duration-400 ease-out
-                 flex flex-col"
+      className="group cursor-pointer w-full flex flex-col gap-5"
     >
 
       {/* MEDIA */}
-      <div className="relative w-full overflow-hidden bg-stone-100"
-           style={{ paddingBottom: "62%" }}>
+      <div className="relative w-full overflow-hidden bg-black/5 dark:bg-white/5"
+           style={{ paddingBottom: "70%" }}>
 
         {displayVid ? (
           <video
             key={displayVid}
             className="absolute inset-0 w-full h-full object-cover
-                       scale-100 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                       scale-100 group-hover:scale-[1.05] transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]"
             loop autoPlay muted playsInline
           >
             <source src={displayVid} type="video/mp4" />
@@ -34,42 +28,36 @@ const ProjectCard = ({ title, overview, year, image, vid, onClick }) => {
             src={image}
             alt={title}
             className="absolute inset-0 w-full h-full object-cover
-                       scale-100 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                       scale-100 group-hover:scale-[1.05] transition-transform duration-[1.5s] ease-[0.16,1,0.3,1]"
           />
         )}
 
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-
-        <span className="absolute bottom-3.5 left-4
-                         text-[9px] font-black uppercase tracking-[0.25em]
-                         text-white/90 bg-black/50 backdrop-blur-sm
-                         px-2.5 py-1 rounded-full">
-          {year}
-        </span>
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-[1.5s] ease-[0.16,1,0.3,1]" />
 
         {/* Arrow — top right, slides in */}
-        <div className="absolute top-3.5 right-3.5
-                        opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0
-                        transition-all duration-300 ease-out">
-          <div className="w-9 h-9 rounded-full bg-white shadow-lg
+        <div className="absolute top-4 right-4
+                        opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0
+                        transition-all duration-700 ease-[0.16,1,0.3,1]">
+          <div className="w-10 h-10 rounded-full bg-white text-black backdrop-blur-md shadow-2xl
                           flex items-center justify-center">
-            <ArrowUpRight size={16} className="text-stone-900" strokeWidth={2.5} />
+            <ArrowUpRight size={18} strokeWidth={2} />
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col gap-1.5 px-5 py-5">
-
+      <div className="flex flex-col gap-2">
         {/* Title row */}
-        <div className="flex items-start justify-between gap-3">
-          <h2 className="text-[17px] font-semibold tracking-tight text-stone-900 leading-snug
-                         group-hover:text-stone-700 transition-colors duration-300">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-xl font-medium tracking-tight text-[#111] dark:text-[#f3f3f3] leading-snug group-hover:opacity-70 transition-opacity duration-500">
             {title}
           </h2>
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
+            {year}
+          </span>
         </div>
 
         {/* Overview */}
-        <p className="text-[13px] text-stone-400 leading-relaxed line-clamp-2 font-normal">
+        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2 font-light">
           {overview}
         </p>
       </div>
